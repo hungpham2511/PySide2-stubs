@@ -763,11 +763,35 @@ class QAction(PySide2.QtCore.QObject):
         HighPriority             : QAction.Priority = ... # 0x100
 
     @typing.overload
-    def __init__(self, icon:PySide2.QtGui.QIcon, text:str, parent:typing.Optional[PySide2.QtCore.QObject]=...) -> None: ...
+    def __init__(
+        self,
+        icon:PySide2.QtGui.QIcon,
+        text:str,
+        parent:typing.Optional[PySide2.QtCore.QObject]=...,
+        triggered:typing.Callable=...,
+        changed:typing.Callable=...,
+        toggled:typing.Callable=...,
+        hovered:typing.Callable=...
+    ) -> None: ...
     @typing.overload
-    def __init__(self, parent:typing.Optional[PySide2.QtCore.QObject]=...) -> None: ...
+    def __init__(
+        self,
+        parent:typing.Optional[PySide2.QtCore.QObject]=...,
+        triggered:typing.Callable=...,
+        changed:typing.Callable=...,
+        toggled:typing.Callable=...,
+        hovered:typing.Callable=...
+    ) -> None: ...
     @typing.overload
-    def __init__(self, text:str, parent:typing.Optional[PySide2.QtCore.QObject]=...) -> None: ...
+    def __init__(
+        self,
+        text:str,
+        parent:typing.Optional[PySide2.QtCore.QObject]=...,
+        triggered:typing.Callable=...,
+        changed:typing.Callable=...,
+        toggled:typing.Callable=...,
+        hovered:typing.Callable=...
+    ) -> None: ...
 
     def actionGroup(self) -> PySide2.QtWidgets.QActionGroup: ...
     def activate(self, event:PySide2.QtWidgets.QAction.ActionEvent) -> None: ...
